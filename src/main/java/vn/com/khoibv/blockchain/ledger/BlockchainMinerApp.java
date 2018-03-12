@@ -1,4 +1,4 @@
-package vn.com.khoibv.blockchain;
+package vn.com.khoibv.blockchain.ledger;
 
 public class BlockchainMinerApp {
 
@@ -9,17 +9,20 @@ public class BlockchainMinerApp {
   public static void main(String[] args) {
 
 //add our blocks to the blockchain ArrayList:
-    Block block1 = new Block("Hi im the first block", "0");
+//    Block block1 = new Block("Hi im the first block", "0");
+    Block block1 = new Block("0");
     BlockChain.add(block1);
     System.out.println("Trying to Mine block 1... ");
     block1.mineBlock(difficulty);
 
-    Block block2 = new Block("Yo im the second block", block1.hash);
+//    Block block2 = new Block("Yo im the second block", block1.hash);
+    Block block2 = new Block(block1.hash);
     BlockChain.add(block2);
     System.out.println("Trying to Mine block 2... ");
     block2.mineBlock(difficulty);
 
-    Block block3 = new Block("Hey im the third block", block2.hash);
+//    Block block3 = new Block("Hey im the third block", block2.hash);
+    Block block3 = new Block(block2.hash);
     BlockChain.add(block3);
     System.out.println("Trying to Mine block 3... ");
     block3.mineBlock(difficulty);
